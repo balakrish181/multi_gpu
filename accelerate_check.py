@@ -10,7 +10,7 @@ accelerate = Accelerator()
 
 # Define transformations and dataset
 weights = models.ViT_L_32_Weights.DEFAULT
-transform = weights.transforms
+transform = weights.transforms()
 
 # Load CIFAR-10 dataset
 train_data = datasets.CIFAR10(root='./data', train=True, transform=transform, download=True)
