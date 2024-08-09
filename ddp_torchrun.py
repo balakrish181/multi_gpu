@@ -57,7 +57,7 @@ class Trainer:
 
 
             if self.gpu_id ==0 and epoch% self.save_every==0:
-                self._save_checkpoints(epoch)
+                self._save_snapshot(epoch)
 
         
     def _save_snapshot(self,epoch):
