@@ -92,7 +92,7 @@ def prepare_dataloader(dataset,batch_size:int):
 def main(total_epochs,save_every,snapshot_path = 'snapshot.pth'):
     ddp_setup()
     dataset,model,optimizer = load_train_objs()
-    train_data = prepare_dataloader(dataset,batch_size=32)
+    train_data = prepare_dataloader(dataset,batch_size=64)
     trainer = Trainer(model,train_data,optimizer,save_every,snapshot_path)
     trainer.train_loop(total_epochs)
     destroy_process_group()
