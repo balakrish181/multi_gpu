@@ -91,8 +91,9 @@ if __name__ == "__main__":
     import sys
     total_epochs = int(sys.argv[1])
     save_every = int(sys.argv[2])
+    batch_size = int(sys.argv[3])
     world_size = torch.cuda.device_count()
-    mp.spawn(main,args=(world_size,total_epochs,save_every),nprocs=world_size)
+    mp.spawn(main,args=(world_size,total_epochs,save_every,batch_size),nprocs=world_size)
 
 
 
