@@ -69,8 +69,8 @@ import sys
 def main(device,total_epochs,save_every,batch_size):
     dataset,model,optimizer = load_train_objs()
     train_data = prepare_dataloader(dataset,batch_size)
-    print(len(train_data))
-    sys.exit()
+    #print(len(train_data))
+    #sys.exit()
     trainer = Trainer(model,train_data,optimizer,device,save_every)
     trainer.train_loop(total_epochs)
 
